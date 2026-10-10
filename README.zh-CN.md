@@ -2,146 +2,144 @@
 
 **简体中文** · [繁體中文](README.zh-TW.md) · [English](README.md)
 
-八个可跨 Agent 使用的技能，覆盖内容网站的开发和维护：从需求、响应式界面，到可靠的编辑器、媒体归属、发布流程和基于本站资料回答的 AI。它们提炼自开发个人博客的实践，涉及公开前台、内容管理后台和互动管理后台。
+## 这是什么？
 
-这些技能关注可以实际验证的结果：保存的内容不会丢失，读取副本保持一致，资源引用持续有效，发布结果在真正的公开网站上得到核验。每个技能都可以独立安装。使用时会适配你的框架、托管平台和设计；“代码仓库＋数据库＋对象存储”只是一种架构示例，并非使用前提。
+这是一套给 **AI 编程助手使用的全栈网站开发工作指南**，包含八个可独立安装的技能。安装到你正在使用的 Agent 中，就能让 AI 在规划、开发、检查和发布网站时，按相应指南开展工作。
 
-## 选择技能
+可以把 Skill 理解成一本实用操作手册：告诉 AI 应该先检查什么、哪些已有内容不能随意覆盖，以及如何确认修改真的有效。它不是网站模板、在线服务，也不是新的 AI 模型；安装后不会自动替你生成或发布网站。
 
-| 技能 | 适用场景 |
+它尤其适合个人博客、作品集、相册网站等项目：既有访客看到的页面，也有内容编辑和用户互动功能。使用时不限定前端框架、云平台或模型服务商。
+
+## 它解决什么问题？
+
+- **改好一个页面，另一个页面却坏了。** 把前台、后台、接口和存储的数据一起检查。
+- **编辑时看着正常，保存后却变了。** 验证格式、表格、图片和保存后重新打开，不只看初始界面。
+- **新内容只出现在一处。** 检查搜索、日历、地图等依赖同一份内容的板块是否同步。
+- **发布提示成功，网站却还是旧版。** 区分保存草稿、提交代码、部署，以及正式网站的实际结果。
+- **清理文件时误删仍在使用的照片。** 先检查草稿、已发布内容、回收站和备份里的引用。
+- **手机布局、主题切换或动画不好用。** 真正点击、输入、拖动，并检查动画中途被打断的情况。
+- **AI 功能或公开文件泄露数据。** 检查权限、上传、密钥和模型使用范围。
+
+这套指南提供可重复使用的工作方法，不保证 AI 生成的代码一定正确。Agent 仍需要合适的工具、项目访问权限和你的授权；重要修改仍然需要人工复核。
+
+## 选哪个技能？
+
+| 技能 | 什么时候用 |
 | --- | --- |
-| [fullstack-workflow](skills/fullstack-workflow/SKILL.md) | 开发网站的一个阶段，或实施跨前台、后台、API 和存储的功能。 |
-| [fullstack-ui-review](skills/fullstack-ui-review/SKILL.md) | 检查真实用户流程、响应式状态、主题、弹窗，以及拖动和动画问题。 |
-| [fullstack-editor-reliability](skills/fullstack-editor-reliability/SKILL.md) | 检查可视编辑与 Markdown 往返转换、可撤销的工具栏操作、表格、图片和保存冲突。 |
-| [fullstack-content-sync](skills/fullstack-content-sync/SKILL.md) | 管理权威内容来源、整代原子切换的读取副本、派生索引和媒体引用。 |
-| [fullstack-release](skills/fullstack-release/SKILL.md) | 发布经过检查的确切更改，处理提交结果未知的情况，匹配部署版本并核验公开网站。 |
-| [fullstack-ai-safety](skills/fullstack-ai-safety/SKILL.md) | 开发基于资料回答的聊天与影像助手，处理服务商边界、配额、预算和中断。 |
-| [fullstack-security-review](skills/fullstack-security-review/SKILL.md) | 检查明确的 Web 信任边界、内容渲染、上传，以及不包含凭据的发布产物。 |
-| [fullstack-maintenance](skills/fullstack-maintenance/SKILL.md) | 根据引用关系清理文件、限定范围撤销、演练备份恢复，以及维护操作指南。 |
+| [fullstack-workflow](skills/fullstack-workflow/SKILL.md) | 规划一个版本，或协调前台、后台、接口和存储一起修改。 |
+| [fullstack-ui-review](skills/fullstack-ui-review/SKILL.md) | 检查布局、深浅主题、手机端、弹窗和动效反馈。 |
+| [fullstack-editor-reliability](skills/fullstack-editor-reliability/SKILL.md) | 修复排版、表格、图片描述、图片操作和保存后重新打开的问题。 |
+| [fullstack-content-sync](skills/fullstack-content-sync/SKILL.md) | 保持内容来源、读取副本、相关展示和媒体引用一致。 |
+| [fullstack-release](skills/fullstack-release/SKILL.md) | 检查具体更改、提交代码、跟进部署，并核验正式网站。 |
+| [fullstack-ai-safety](skills/fullstack-ai-safety/SKILL.md) | 开发基于本站资料的聊天或影像助手，明确数据、次数和费用限制。 |
+| [fullstack-security-review](skills/fullstack-security-review/SKILL.md) | 检查实际的网站风险，以及公开前要审查的文件。 |
+| [fullstack-maintenance](skills/fullstack-maintenance/SKILL.md) | 安全清理文件、撤销限定范围的修改，并验证备份能否恢复。 |
 
-较大的任务可以从 `fullstack-workflow` 开始。遇到具体问题时，也可以只安装对应的技能。单个技能可以独立工作，无须安装建议搭配的其他技能。
+较大的任务可以先用 `fullstack-workflow`；遇到具体问题，也可以只安装对应技能。每个技能自带所需参考资料，不强制安装其他技能。
 
-## 本地安装
+## 三步安装与使用
 
-下载并解压本文件夹，或在所有者发布后克隆仓库。要使用附带的工具，请安装 Node.js 20 或更高版本，并在本文件夹中打开终端。工具没有 npm 依赖，也不需要执行 `npm install`。技能本身是 Markdown 文件；手动安装不需要 Node.js，除非你明确运行某个辅助脚本。
+### 第一步：下载完整的技能包
 
-### 先预览，再复制
+到 [Releases](https://github.com/VinsonFung/fullstack-site-skills/releases) 下载 ZIP，或克隆[本仓库](https://github.com/VinsonFung/fullstack-site-skills)。解压后，在 `fullstack-site-skills` 文件夹里打开终端。
+
+附带安装器需要 Node.js 20 或以上版本，建议使用仍在维护的 LTS 版本。没有 npm 依赖，无须运行 `npm install`。如果只手动复制技能文件夹，则不需要 Node.js，除非要运行某个辅助脚本。
+
+### 第二步：先预览，再执行安装
+
+安装到 Codex：
 
 ```sh
-node scripts/install.mjs --list
 node scripts/install.mjs --agent codex --scope user
 node scripts/install.mjs --agent codex --scope user --apply
 ```
 
-第一条命令列出八个技能，第二条预览完整的安装计划。只有加上 `--apply` 才会写入文件。要安装部分技能，或同时安装到多个 Agent：
+安装到 WorkBuddy：
 
 ```sh
-node scripts/install.mjs --agent codex,claude-code,cursor --scope user --skill fullstack-workflow,fullstack-release --apply
+node scripts/install.mjs --agent workbuddy --scope user
+node scripts/install.mjs --agent workbuddy --scope user --apply
 ```
 
-安装到国内编码 Agent 时，可以先预览同一技能在多个原生客户端中的安装，再执行复制：
+第一条只显示准备复制到哪里，带 `--apply` 的命令才会复制文件。只安装一个技能，或同时安装到多个 Agent：
 
 ```sh
-node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,codebuddy,qoder,trae-cn,trae-cli --scope user --skill fullstack-workflow
-node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,codebuddy,qoder,trae-cn,trae-cli --scope user --skill fullstack-workflow --apply
+node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,workbuddy --scope user --skill fullstack-workflow --apply
 ```
 
-要安装到项目中，请从你的网站项目终端运行下载的脚本，并将脚本路径替换为它的实际位置：
+如果只想让当前项目使用，在目标项目的终端执行以下命令，并把脚本路径换成实际位置。目标项目文件夹必须已经存在：
 
 ```sh
-node /path/to/fullstack-site-skills/scripts/install.mjs --agent codex --scope project --project .
-node /path/to/fullstack-site-skills/scripts/install.mjs --agent codex --scope project --project . --apply
+node /path/to/fullstack-site-skills/scripts/install.mjs --agent workbuddy --scope project --project .
+node /path/to/fullstack-site-skills/scripts/install.mjs --agent workbuddy --scope project --project . --apply
 ```
 
-在 Windows PowerShell 中，如果脚本的实际路径含有空格，请给路径加引号；Node 支持正斜杠路径。项目级安装要求目标目录已经存在。安装器拒绝包含 `..` 的显式目标路径，也拒绝任何经过符号链接或目录联接的源路径、目标路径；请使用直接、规范的路径。安装器会复制整个技能文件夹，跳过内容逐字节相同的安装，并拒绝内容不同的已有目标。它不请求网络，也不修改客户端配置或权限。写入失败时，新建的目标目录中可能留下部分文件；重试前请将这个不完整的技能文件夹移到别处。
+Windows 中，脚本路径含空格时要加引号。安装器会拒绝包含 `..` 的目标路径、符号链接或目录联接，以及内容不同的已有技能文件夹；内容完全相同的会跳过。它不请求网络、不改变 Agent 权限，也不会覆盖别人的技能。写入失败可能留下部分新文件，重试前请将不完整的文件夹移到别处。
 
-### 手动安装与原生目录
+### 第三步：确认识别，然后提出任务
 
-将 `skills/` 中所需的技能文件夹复制到下表对应的目录。若技能包含 `references/`、`assets/`、`scripts/` 和 `agents/`，请一并复制，不能只复制 `SKILL.md`。`~` 表示你的用户主目录；项目目录以网站根目录为基准。
-
-| Agent（附带安装器 ID） | 项目目录 | 用户目录 | 显式使用方式 |
-| --- | --- | --- | --- |
-| Codex（`codex`） | `.agents/skills/` | `~/.agents/skills/` | `$fullstack-workflow` |
-| Claude Code（`claude-code`） | `.claude/skills/` | `~/.claude/skills/` | `/fullstack-workflow` |
-| Cursor（`cursor`） | `.cursor/skills/` | `~/.cursor/skills/` | `/fullstack-workflow` |
-| GitHub Copilot（`github-copilot`） | `.github/skills/` | `~/.copilot/skills/` | 在支持此功能的 CLI／VS Code 界面中使用 `/fullstack-workflow`。 |
-| Gemini CLI（`gemini-cli`） | `.gemini/skills/` | `~/.gemini/skills/` | 请 Agent 使用指定名称的技能；用 `/skills list` 检查技能是否已被发现。 |
-| OpenCode（`opencode`） | `.opencode/skills/` | `~/.config/opencode/skills/` | 请 Agent 使用指定名称的技能。 |
-| DeepSeek Harness（`deepseek-harness`） | `.dsh/skills/` | `~/.dsh/skills/` | `/fullstack-workflow`，或请 Agent 使用指定名称的技能。 |
-| Kimi Code CLI，当前 Node.js 版（`kimi-code`） | `.kimi-code/skills/` | `~/.kimi-code/skills/` | `/skill:fullstack-workflow` |
-| Kimi CLI，旧 Python/uv 版（`kimi-cli`） | `.kimi/skills/` | `~/.kimi/skills/` | `/skill:fullstack-workflow` |
-| Qwen Code（`qwen-code`） | `.qwen/skills/` | `~/.qwen/skills/` | `/fullstack-workflow`；`/skills` 打开技能面板。 |
-| CodeBuddy Code CLI（`codebuddy`） | `.codebuddy/skills/` | `~/.codebuddy/skills/` | `/fullstack-workflow` |
-| Qoder CLI／IDE（`qoder`） | `.qoder/skills/` | `~/.qoder/skills/` | `/fullstack-workflow`；CLI 用 `/skills reload` 刷新，IDE 重启后从 `/` 列表选择。 |
-| TRAE 国内 IDE／TraeCode（`trae-cn`） | `.trae/skills/` | `~/.trae-cn/skills/` | 请 Agent 使用指定名称的技能。 |
-| TRAE CLI（`trae-cli`） | `.traecli/skills/` | `~/.traecli/skills/` | 请 Agent 使用指定名称的技能；用 `/skills` 检查发现情况，修改后重启。 |
-
-DeepSeek Harness 是独立的编码 Agent 客户端。这个安装目标不会把技能安装进 DeepSeek 网页聊天或模型 API；要让 DeepSeek 模型使用本地技能，需要支持 Agent Skills 的宿主。详见 [DeepSeek 使用指南](docs/DEEPSEEK.md)。
-
-附带安装器使用表中的默认目录，不读取 `DSH_HOME` 或 `KIMI_CODE_HOME` 覆盖设置。如果这两个客户端使用了自定义数据根目录，请手动将技能文件夹复制到该根目录的 `skills/` 下，或选择项目级安装。当前 Node.js 版 Kimi 使用 `kimi-code`，旧 Python/uv 版使用 `kimi-cli`；`trae-cn` 对应国内 IDE，`trae-cli` 使用另一组目录。
-
-安装后，必要时重新打开或重新加载 Agent 会话。使用前，先检查已安装技能列表，或请 Agent 确认它识别到了所需技能。这 14 个安装目标（包含不同产品版本）的目录和调用方式已于 2026-10-09 对照官方文档检查，但实际客户端尚未进行端到端运行验证。详见[兼容性与官方链接](docs/COMPATIBILITY.md)，其中也介绍了共享目录支持和旧版客户端注意事项。
-
-### 可选的第三方安装工具
-
-独立的 [Vercel Skills CLI](https://github.com/vercel-labs/skills) 也能发现标准的 `skills/<name>/SKILL.md` 目录结构：
-
-```sh
-npx skills add . --list
-npx skills add . --skill fullstack-workflow --agent codex --global --copy
-```
-
-请在本技能包文件夹中运行这些命令。这种可选方式会下载并执行第三方工具，并遵循该工具的安装行为；它未包含在本技能包中，也不在本技能包的测试范围内。表中的 Agent ID 属于本技能包的 `scripts/install.mjs`；第三方工具有自己的客户端支持范围和 ID，使用其他目标前请检查它的当前帮助。发布到 GitHub 后，可以用你的仓库 URL 替换 `.`。
-
-## 使用流程
-
-告诉 Agent 你的目标和任务范围。它应先检查现有项目，只阅读相关参考资料，并遵守你已明确的决定。例如：
+必要时重新加载 Agent 或新建会话。确认它能识别 `fullstack-workflow`，然后描述具体任务，例如：
 
 ```text
-使用 fullstack-workflow 规划我的内容网站下一版。
-本轮只在本地工作。只解释会影响数据或发布的选择。
+使用 fullstack-workflow 规划我的博客下一版。
+本轮只改本地文件，不部署。
 
-使用 fullstack-editor-reliability 修复无法删除的表格。
-验证输入、图片描述以及保存后重新打开仍然正常。
+使用 fullstack-editor-reliability 修复正文图片不能移动、不能删除的问题。
+检查保存后重新打开、图片描述和其他格式仍然正常。
 
-使用 fullstack-content-sync 诊断新相册为何没有出现在地图中。
-追踪所有使用派生数据的模块，并保留现有草稿。
-
-使用 fullstack-release 发布已经获得授权的更改。
-区分仓库提交、部署和公开网站核验。
+使用 fullstack-release 发布我已经授权的修改。
+核验正式网站后，再确认发布完成。
 ```
 
-Agent 也可能自动发现适用技能。如果多个已安装技能的能力相近，明确说出名称更有帮助。技能提供的是工作指引；Agent 仍需要适当的浏览器、终端或云端工具，以及用户对任务的授权。工具名称、框架、模型服务商、视觉风格和数值限制由目标项目决定。
+可以使用你习惯的语言。各客户端直接调用技能的方式有所不同，详见[兼容性指南](docs/COMPATIBILITY.md)。
 
-## 验证与参与贡献
+## 支持哪些 Agent？
+
+安装器提供 14 个默认安装目标，包含不同产品版本：
+
+| Agent／版本 | 安装器 ID |
+| --- | --- |
+| Codex | `codex` |
+| Claude Code | `claude-code` |
+| Cursor | `cursor` |
+| GitHub Copilot | `github-copilot` |
+| Gemini CLI | `gemini-cli` |
+| OpenCode | `opencode` |
+| DeepSeek Harness | `deepseek-harness` |
+| Kimi Code CLI (Node) | `kimi-code` |
+| Kimi CLI (legacy Python) | `kimi-cli` |
+| Qwen Code | `qwen-code` |
+| WorkBuddy | `workbuddy` |
+| Qoder CLI / IDE | `qoder` |
+| TRAE mainland IDE | `trae-cn` |
+| TRAE CLI | `trae-cli` |
+
+WorkBuddy 官方文档中的代码项目兼容目录仍是 `.codebuddy/skills/` 和 `~/.codebuddy/skills/`。旧命令 `--agent codebuddy` 继续作为别名使用，不会让已有命令失效。[WorkBuddy 安装说明](docs/WORKBUDDY.md)介绍了文件复制与技能市场导入的区别。
+
+手动安装时，复制整个 `skills/<名称>/` 文件夹，包括参考资料、脚本、素材、元数据和许可证，而不是只复制 `SKILL.md`。[兼容性指南](docs/COMPATIBILITY.md)列有安装目录、调用方式和官方依据。
+
+安装器只使用默认目录，不读取 `DSH_HOME`、`KIMI_CODE_HOME` 或客户端自定义设置；自定义目录请手动复制。尚未在每款实际客户端中完成端到端验证。DeepSeek Harness 能加载本地技能，但 DeepSeek 普通网页聊天／API 不能单靠复制文件夹来安装，详见 [DeepSeek 使用方式](docs/DEEPSEEK.md)。
+
+可选的 [Vercel Skills CLI](https://github.com/vercel-labs/skills) 是另一套安装工具：
+
+```sh
+npx skills add https://github.com/VinsonFung/fullstack-site-skills --list
+```
+
+该方式会下载并执行第三方工具；它的 Agent ID 和安装行为不一定与本包相同，也不在本包的测试范围内。
+
+## 检查、隐私与许可
+
+在本包目录中执行：
 
 ```sh
 node scripts/validate.mjs
 node --test
+node scripts/check-links.mjs
 ```
 
-验证器会检查本技能包可移植的标量 frontmatter、文件夹名称、本地链接、自包含的参考资料、必需文件和可疑材料，不会打印匹配到的密钥值。测试使用临时项目和模拟的用户主目录。安全技能还附带只读项目扫描器，其限制在该技能中有说明。
+验证器检查必需文件、技能信息、本地引用和可疑内容。测试使用隔离项目和模拟用户目录。链接检查器检查本地目标和公开 HTTPS 链接；第三方网页之后可能迁移，或在部分网络中不可访问。具体范围与限制见[验证记录](docs/VALIDATION.md)。
 
-请参阅[验证记录](docs/VALIDATION.md)、[贡献指南](CONTRIBUTING.md)和[安全问题报告](SECURITY.md)。安装本技能包不需要调用模型、发送遥测、提供凭据或部署生产环境。
+安装不需要模型密钥，不发送遥测。包内是可复用的指南和本地工具，不包含原网站的正文、用户、照片或私有配置。Agent 实际使用模型时，仍遵循它自身的配置和服务商条款；本包不会调用模型或绕过权限。
 
-## 目录、来源与许可
-
-```text
-fullstack-site-skills/
-  README.md / README.zh-CN.md / README.zh-TW.md
-  LICENSE
-  docs/              兼容性、来源与验证记录
-  scripts/           本地安装器与技能包验证器
-  tests/             隔离环境中的行为检查
-  skills/
-    fullstack-workflow/
-      SKILL.md
-      agents/openai.yaml
-      references/
-      assets/
-    ... 另外七个自包含的技能
-```
-
-`agents/openai.yaml` 是可选的 Codex 界面元数据，其他 Agent 可以忽略。技能包未声明 `allowed-tools` 权限授予或外部工具依赖。内容和代码均为原创，按 [Agent Skills 格式](https://agentskills.io/specification)组织。[来源说明](docs/PROVENANCE.md)记录了官方文档和公开的打包参考；本技能包不重新分发第三方技能正文或网站素材。
-
-采用 MIT 许可证。保留[许可声明](LICENSE)后，你可以使用、修改和重新分发本技能包。发布时，将本文件夹作为你自己的 GitHub 仓库根目录上传；只保留本文件夹内的内容，不要上传外围的网站项目。具体步骤见 [GitHub 上传指南](docs/PUBLISH.zh-CN.md)。npm 的 `private` 字段用于防止意外发布到 npm，并不会将 GitHub 仓库设为私密。
+采用 MIT 许可证，保留[许可声明](LICENSE)后可使用、修改和分享。其他说明：[贡献指南](CONTRIBUTING.md)、[安全问题报告](SECURITY.md)、[来源说明](docs/PROVENANCE.md)、[GitHub 上传指南](docs/PUBLISH.zh-CN.md)。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fullstack Ai Safety"
+  short_description: "Add grounded AI with controlled cost and data access"
+  default_prompt: "Use $fullstack-ai-safety to complete the requested website task with reviewable evidence."

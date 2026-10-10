@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fullstack Content Sync"
+  short_description: "Keep content versions and media references consistent"
+  default_prompt: "Use $fullstack-content-sync to complete the requested website task with reviewable evidence."

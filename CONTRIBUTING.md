@@ -16,9 +16,10 @@ Run from the package root:
 ```sh
 node scripts/validate.mjs
 node --test
+node scripts/check-links.mjs
 ```
 
-The local validator intentionally checks this bundle's simple scalar frontmatter. For a changed format or more complex metadata, also use the relevant official format validator. The validation record should separate structural checks, installer tests, behavioral skill trials and actual client discovery tests.
+The local validator intentionally checks this bundle's simple scalar frontmatter. For a changed format or more complex metadata, also use the relevant official format validator. The link checker makes read-only requests to public documentation; use `--local-only` for offline target validation. The validation record should separate structural checks, installer tests, behavioral skill trials and actual client discovery tests.
 
 Installation-directory changes need a supporting official documentation link and a mapping test. Keep temporary test roots isolated. A security-pattern scan can generate false positives; report rule/location only and review without exposing matched values.
 

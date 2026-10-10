@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fullstack UI Review"
+  short_description: "Review real UI states and responsive motion"
+  default_prompt: "Use $fullstack-ui-review to complete the requested website task with reviewable evidence."

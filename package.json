@@ -1,6 +1,6 @@
 {
   "name": "fullstack-site-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "Portable Agent Skills for reliable content websites, editors, synchronization and releases.",
@@ -8,6 +8,7 @@
   "engines": { "node": ">=20" },
   "scripts": {
     "validate": "node scripts/validate.mjs",
+    "links": "node scripts/check-links.mjs",
     "test": "node --test",
     "check": "node scripts/validate.mjs && node --test",
     "skills:list": "node scripts/install.mjs --list"
