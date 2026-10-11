@@ -16,7 +16,7 @@ node scripts/install.mjs --agent workbuddy --scope user
 node scripts/install.mjs --agent workbuddy --scope user --apply
 ```
 
-重新打开对应项目或会话，确认技能已识别，再说“使用 fullstack-workflow 规划我的网站下一版”。如你的版本使用自定义目录，请以实际客户端说明为准，复制完整技能文件夹。
+重新打开对应项目或会话，确认技能已识别，再说“使用 fullstack-frontend-development 改进我的网站手机导航”。管理界面和服务端任务用 `fullstack-backend-development`，需要这套视觉方向时用 `fullstack-design-style`。如你的版本使用自定义目录，请以实际客户端说明为准，复制完整技能文件夹。
 
 ## 技能市场／开放平台不是同一条安装路径
 

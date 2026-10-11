@@ -1,4 +1,0 @@
-interface:
-  display_name: "Fullstack Editor Reliability"
-  short_description: "Preserve editing, formatting and media state"
-  default_prompt: "Use $fullstack-editor-reliability to complete the requested website task with reviewable evidence."

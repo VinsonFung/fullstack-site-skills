@@ -1,4 +1,0 @@
-interface:
-  display_name: "Fullstack Maintenance"
-  short_description: "Clean safely and prove scoped recovery"
-  default_prompt: "Use $fullstack-maintenance to complete the requested website task with reviewable evidence."

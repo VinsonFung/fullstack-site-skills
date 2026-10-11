@@ -1,9 +1,9 @@
 {
   "name": "fullstack-site-skills",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "Portable Agent Skills for photo-led glass design, reliable content websites, editors and releases.",
+  "description": "Three standalone Agent Skills for frontend development, photographic glass design and backend operations.",
   "license": "MIT",
   "engines": { "node": ">=20" },
   "scripts": {

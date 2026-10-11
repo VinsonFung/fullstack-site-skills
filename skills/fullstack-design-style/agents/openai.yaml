@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Style"
+  short_description: "Design readable photographic liquid-glass themes"
+  default_prompt: "Use $fullstack-design-style to apply the photograph-led editorial glass direction while preserving my content and working interactions."

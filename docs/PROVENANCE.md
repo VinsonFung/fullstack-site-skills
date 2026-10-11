@@ -27,8 +27,12 @@ Portable lessons include immutable content generations, expected-version checks,
 
 ## Optional design direction
 
-The ninth skill, [fullstack-liquid-glass-design](../skills/fullstack-liquid-glass-design/SKILL.md), distills the author's user-owned public frontend style into original instructions: scenic photography, editorial typography, blue-grey glass, readable painted surfaces and coherent light/dark themes. The included namespaced CSS palette was written as a small adjustable example, not exported from the site's accumulated stylesheets.
+The optional [fullstack-design-style](../skills/fullstack-design-style/SKILL.md) distills the author's user-owned public frontend style into original instructions: scenic photography, editorial typography, blue-grey glass, readable painted surfaces and coherent light/dark themes. The included namespaced CSS palette was written as a small adjustable example, not exported from the site's accumulated stylesheets.
 
-No photography, logos, avatars, article text, motto, site addresses, source-site routes or proprietary font files are distributed. Hallmark informed the extraction method during preparation; its skill text, catalogs, implementation code and assets are not bundled, and the new skill does not require Hallmark. This optional style is used when requested or already established, not imposed by the other eight development skills.
+No photography, logos, avatars, article text, motto, site addresses, source-site routes or proprietary font files are distributed. Hallmark informed the extraction method during preparation; its skill text, catalogs, implementation code and assets are not bundled, and the design skill does not require Hallmark. This optional style is used when requested or already established, not imposed by either development skill.
+
+## Three-entry consolidation
+
+Version 2.0.0 groups the original professional guidance into frontend development, design style and backend development. Editor, synchronization, release, security, AI and recovery material remains in directly linked task-specific references, not extra discoverable entries. A few shared delivery and interaction resources are copied into each development skill to keep standalone installations complete; tests require those copies to match. The [migration guide](MIGRATION.md) records retired names without deleting users' existing installations.
 
 The skills preserve the user's actual authority and chosen architecture. They are practical guidance with stated validation limits, not a certification, framework distribution or guarantee of defect-free implementation.

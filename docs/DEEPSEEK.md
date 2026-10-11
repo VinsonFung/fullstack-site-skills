@@ -11,7 +11,7 @@ node scripts/install.mjs --agent deepseek-harness --scope user
 node scripts/install.mjs --agent deepseek-harness --scope user --apply
 ```
 
-The default native directories are `.dsh/skills/` in a project and `~/.dsh/skills/` for a user. Start a new session if necessary, confirm that `fullstack-workflow` is available, then invoke `/fullstack-workflow` or ask the Agent to use it by name.
+The default native directories are `.dsh/skills/` in a project and `~/.dsh/skills/` for a user. Start a new session if necessary, confirm that `fullstack-frontend-development` is available, then invoke `/fullstack-frontend-development` or ask the Agent to use it by name. Choose `fullstack-backend-development` for administration and service tasks, or `fullstack-design-style` for the optional visual direction.
 
 For a customized Harness, check that the skill registry, local filesystem provider and model-facing skill tool are enabled. The installer only copies folders; it does not enable plugins or modify Agent configuration. If `DSH_HOME` or the provider's `dshHome` changes your skills root, manually copy the complete skill directories into that configured root instead of using the default user mapping. Official references: [filesystem roots](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/skill/skill-filesystem/README.md) and [invocation tool](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/skill/tool-skill/README.md).
 
@@ -26,7 +26,7 @@ node scripts/install.mjs --agent opencode --scope user
 node scripts/install.mjs --agent opencode --scope user --apply
 ```
 
-4. Start or reload the session, confirm discovery, and request `fullstack-workflow` by name.
+4. Start or reload the session, confirm discovery, and request the relevant current entry, such as `fullstack-frontend-development`, by name.
 
 This model setup is documented by [DeepSeek](https://api-docs.deepseek.com/quick_start/agent_integrations/opencode/) and [OpenCode](https://opencode.ai/v2/docs/providers). DeepSeek also publishes an optional [Codex integration guide](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/); skill installation still targets `codex`, not a model-specific directory. Product/version support should be checked before changing a working client setup.
 

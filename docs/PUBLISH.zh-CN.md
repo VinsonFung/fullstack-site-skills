@@ -1,6 +1,6 @@
 # 上传到 GitHub：只发布这个技能包
 
-这份指南只帮助你手动发布技能包，不会上传个人网站。技能包采用 MIT 许可证，可以作为独立公开仓库发布。下面的 `v1.3.0` 是**技能包版本**，不是网站版本。
+这份指南只帮助你手动发布技能包，不会上传个人网站。技能包采用 MIT 许可证，可以作为独立公开仓库发布。下面的 `v2.0.0` 是**技能包版本**，不是网站版本。
 
 ## 先保护提交信息
 
@@ -16,13 +16,15 @@
 4. 打开本地 `fullstack-site-skills` 文件夹，将**里面的文件和子文件夹**拖入网页，保留目录结构。不要把外层同名文件夹作为仓库里的又一层，也不要上传 ZIP 代替源码。
 5. 确认包含 `README.md`、`README.zh-CN.md`、`README.zh-TW.md`、`LICENSE`、`package.json`、`docs/`、`scripts/`、`tests/`、`skills/`，以及 `.gitignore`、`.gitattributes`。点开头的文件也不能漏掉。
 6. 提交说明可填 `Add portable full-stack site skills`，完成页面上的 **Commit changes / Propose changes**。若页面要求使用分支，按提示提交并合并到默认分支。
-7. 上传后打开 `skills/fullstack-workflow/SKILL.md`，确认能看到内容；首页应自动展示英文 README，其顶部可以切换简体中文、繁体中文。
+7. 上传后打开 `skills/fullstack-frontend-development/SKILL.md`，确认能看到内容；检查 `skills/` 只有三个当前入口。首页应自动展示英文 README，其顶部可以切换简体中文、繁体中文。
 
 网页上传一次最多 100 个文件；这份包在该范围内。浏览器上传不会应用 `.gitattributes` 的自动处理。如有部分文件或目录没有被上传，可以继续用 **Upload files** 补齐并检查完整目录，不要重新上传整个个人网站。[GitHub 官方文件上传说明](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)。
 
 ## 可选：供别人直接下载的 Release
 
-源码上传完成后，在仓库的 **Releases → Draft a new release** 创建标签 `v1.3.0`，选择已上传源码的默认分支，标题填 `Fullstack Site Skills v1.3.0`。把对应的 `fullstack-site-skills-v1.3.0.zip` 拖到附件区，然后发布 Release。不要附上旧版本压缩包或个人项目备份。更新已有仓库时使用新的版本标签，不覆盖旧标签和旧版本附件。
+源码上传完成后，在仓库的 **Releases → Draft a new release** 创建标签 `v2.0.0`，选择已上传源码的默认分支，标题填 `Fullstack Site Skills v2.0.0`。把对应的 `fullstack-site-skills-v2.0.0.zip` 拖到附件区，然后发布 Release。不要附上旧版本压缩包或个人项目备份。更新已有仓库时使用新的版本标签，不覆盖旧标签和旧版本附件。
+
+从第 1 版升级已有仓库时，网页上传不会自动删除旧目录。按[迁移指南](MIGRATION.md)的旧入口清单移除仓库中的旧技能文件夹，保留其他文件和历史版本；不要把新旧入口同时留在当前 `skills/` 中。
 
 别人可以下载 ZIP 解压后，照三语 README 安装。安装这些技能不需要你的账号、密钥、网站数据库或云端权限。
 

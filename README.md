@@ -4,7 +4,7 @@
 
 ## What is this?
 
-Fullstack Site Skills is a set of **nine reusable guides for AI coding assistants**. They cover planning, visual design, interaction checks, editing, content synchronization, release, AI features, security and maintenance. Install the guides into an Agent you already use, then give it a concrete task and name the relevant skill.
+Fullstack Site Skills 2.0.0 is a set of **three independent guides for AI coding assistants**: public frontend development, an optional visual design direction, and backend development including the admin interface. Install the guides you need into an Agent you already use, then give it a concrete task and name the relevant skill.
 
 Think of a Skill as a working handbook for the assistant: what to inspect first, how to make a change, which existing content to protect, and what evidence establishes that the result works. Each guide is an independent folder with a `SKILL.md` entry point and its supporting materials.
 
@@ -16,31 +16,31 @@ Choose by the outcome you need. The examples below are tasks you can give your A
 
 | Skill | What it helps the Agent do | Example task |
 | --- | --- | --- |
-| [fullstack-workflow](skills/fullstack-workflow/SKILL.md) | Turn a website goal into a coordinated plan and implementation across public pages, admin, API and storage; define how to check completion. | “Add albums to my blog. First trace how editing, storage and the public page will work together.” |
-| [fullstack-liquid-glass-design](skills/fullstack-liquid-glass-design/SKILL.md) | Create a photograph-led, editorial visual style with transparent glass navigation, buttons and panels, coordinated themes, typography and motion. | “Give my photography portfolio this liquid-glass direction, with readable articles and a usable phone layout.” |
-| [fullstack-ui-review](skills/fullstack-ui-review/SKILL.md) | Check whether users can actually read, navigate and operate the existing UI; inspect themes, dialogs, dragging, focus and interrupted motion. A review-only request returns findings. | “Review the mobile menu and theme switch. Report reproducible problems before editing.” |
-| [fullstack-editor-reliability](skills/fullstack-editor-reliability/SKILL.md) | Protect an author's work through formatting, tables, image controls, mode changes, saving and reopening; handle conflicting saves. | “Fix images that cannot be moved or deleted, and verify captions and formatting survive reopening.” |
-| [fullstack-content-sync](skills/fullstack-content-sync/SKILL.md) | Identify the authoritative content source, keep derived views on the same version, and preserve drafts and shared media during refreshes. | “A published post is missing from search and the calendar. Trace and fix synchronization.” |
-| [fullstack-release](skills/fullstack-release/SKILL.md) | Carry an authorized, checked change through submission and deployment, then verify the intended version on the public site. | “Publish this authorized change and confirm the public site serves it.” |
-| [fullstack-ai-safety](skills/fullstack-ai-safety/SKILL.md) | Integrate site-based chat or image assistance with published sources, server-held credentials, authorized media and usage/cost limits. | “Add a site assistant that uses published articles, keeps drafts private and enforces a budget.” |
-| [fullstack-security-review](skills/fullstack-security-review/SKILL.md) | Examine reachable risks in permissions, APIs, uploads and rendered content; inspect release files for secrets and private data. | “Review the upload endpoint and admin permissions before public release.” |
-| [fullstack-maintenance](skills/fullstack-maintenance/SKILL.md) | Plan reference-aware cleanup, bounded undo and backup recovery; check what is still used before removal. | “List unused media with their references and prepare a recoverable cleanup plan.” |
+| [fullstack-frontend-development](skills/fullstack-frontend-development/SKILL.md) | Build and check the pages visitors use: reading, navigation, search, albums, comments and other interactions; cover mobile layouts, accessibility, performance and client-side safety. | “Fix the mobile article menu and album viewer. Check keyboard use, interrupted transitions and slow image loading.” |
+| [fullstack-design-style](skills/fullstack-design-style/SKILL.md) | Apply a photograph-led, editorial, blue-grey liquid-glass visual identity: composition, light/dark themes, typography, transparent controls and restrained motion. | “Redesign my photography homepage in this style, keeping articles readable in both themes.” |
+| [fullstack-backend-development](skills/fullstack-backend-development/SKILL.md) | Build the admin interface and editors together with APIs, data, authentication, media, content synchronization, publishing, backups and server-side AI safeguards. | “Fix the editor's image controls and conflicting saves, then check that published posts reach search and albums without exposing drafts.” |
 
-### Visual design or UI review?
+### Where do the responsibilities meet?
 
-Use `fullstack-liquid-glass-design` when you want to create or redesign a site's appearance in this specific direction. Photography leads the composition; light mode uses a warm paper background, soft white glass and restrained blue accents, while dark mode uses layered navy surfaces. Distinctive headlines sit alongside readable, editorial body text. Transparent navigation, buttons and selected panels use subtle highlights and modest shadows; reading and editing surfaces stay visually calm. Motion follows the control that triggered it and adapts for phones and reduced-motion preferences.
+`fullstack-frontend-development` owns the public visitor experience. It makes reading, search, album viewing and interactions work with the site's chosen appearance. `fullstack-backend-development` owns author and administrator workflows, including their visible admin screens, plus the services and data behind them. Here, “backend” includes admin UI and editor reliability; it is not limited to server code. For a feature spanning both sides, define their API and content-version contract together.
 
-Use `fullstack-ui-review` when you want to assess an existing interface or repair a particular interaction. It asks whether text is readable, a dialog stays aligned, keyboard and touch actions work, and a transition behaves correctly if interrupted. It preserves the site's chosen visual identity and does not require a glass style.
+Use `fullstack-design-style` only when you want to create or redesign the appearance in this specific direction. Photography leads the composition; a blue-grey palette connects light and dark themes, with warm paper and soft white glass in light mode and layered navy surfaces in dark mode. Distinctive headlines sit alongside readable, editorial body text. Transparent navigation, buttons and selected panels use subtle highlights and modest shadows; reading and editing surfaces stay visually calm. Motion follows the control that triggered it and adapts for phones and reduced-motion preferences.
 
-You can combine them: create the visual direction with `fullstack-liquid-glass-design`, then check the resulting journeys with `fullstack-ui-review`. The design skill is optional and self-contained; it does not require Hallmark or impose its appearance on the other eight skills. Installing all nine does not mean every task should use all nine.
+The design skill defines the visual treatment. Frontend and backend development make the corresponding public or admin journeys work, preserving data and enforcing permissions. A functional fix or review preserves the current visual identity unless you ask for a redesign. The design skill is optional and self-contained, with no Hallmark dependency. It contains guidance rather than copied site branding, photographs or content.
 
 ### Use one Skill or combine several?
 
-- For one clear problem, use the corresponding skill on its own: an image-editing failure usually starts with `fullstack-editor-reliability`.
-- For a feature that spans several layers, start with `fullstack-workflow` and add the relevant skills. An album feature may need design, content synchronization and UI review.
-- For publishing or maintenance, invoke the relevant skill only within the action you have authorized. A design or review request does not automatically authorize deployment or deletion.
+- Use one skill for a bounded task: frontend for public search or mobile navigation, design for a visual redesign, backend for an editor, upload endpoint or backup workflow.
+- Combine frontend and backend for features such as albums: backend manages editing, media and publication; frontend presents published content to visitors. Add design only if you want this visual direction.
+- For publishing, security work or maintenance, use the relevant guidance within the action you have authorized. A design or review request does not automatically authorize deployment or deletion. A review-only request returns findings.
 
-Each skill includes its own references; other skills are not mandatory dependencies. These guides provide a repeatable method, not a guarantee that generated code is correct. Your Agent still needs suitable tools, project access and your authorization. Important changes still require human review.
+Each skill is independently installable and includes its own references; the other two are not mandatory dependencies. Professional guidance on security, content synchronization, release and maintenance remains in internal references, loaded when the task requires it. These references are not additional visible skills, and every task does not need to read them all. Installing all three does not require invoking all three.
+
+These guides provide a repeatable method, not a guarantee that generated code is correct. Your Agent still needs suitable tools, project access and your authorization. Important changes still require human review.
+
+### Upgrading from version 1
+
+Version 2.0.0 consolidates the former nine entries into these three. See [the migration guide](docs/MIGRATION.md) for responsibility mapping and updated invocations. The installer does not automatically delete old skill folders from your Agent. Review any local customizations and retire old entries deliberately to avoid duplicate or outdated guidance.
 
 ## Install and use
 
@@ -69,7 +69,7 @@ node scripts/install.mjs --agent workbuddy --scope user --apply
 The first command only previews where files would go; `--apply` copies them. To install one skill into several Agents:
 
 ```sh
-node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,workbuddy --scope user --skill fullstack-workflow --apply
+node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,workbuddy --scope user --skill fullstack-frontend-development --apply
 ```
 
 For a project-only installation, run this from the target project's terminal and replace the script path with its actual location. The project directory must already exist:
@@ -83,19 +83,19 @@ On Windows, quote a script path containing spaces. The installer refuses target 
 
 ### 3. Give the Agent a concrete task
 
-Reload the Agent or start a new session if needed. Confirm that it recognizes `fullstack-workflow`, then describe your task:
+Reload the Agent or start a new session if needed. Confirm that it recognizes the skill you installed, then describe your task:
 
 ```text
-Use fullstack-workflow to plan the next version of my blog.
-Keep this task local; do not deploy it.
+Use fullstack-frontend-development to fix my blog's mobile menu and article search.
+Check keyboard and touch use. Keep this task local; do not deploy it.
 
-Use fullstack-liquid-glass-design to redesign my photography homepage.
-Then use fullstack-ui-review to check mobile layout, contrast and keyboard use.
+Use fullstack-design-style to redesign my photography homepage.
+Then use fullstack-frontend-development to check mobile layout, contrast and keyboard use.
 
-Use fullstack-editor-reliability to fix images that cannot be moved or removed.
+Use fullstack-backend-development to fix editor images that cannot be moved or removed.
 Check that save/reopen, captions and other formatting still work.
 
-Use fullstack-release to publish the change I have authorized.
+Use fullstack-backend-development to publish the change I have authorized.
 Verify the live site before calling the release complete.
 ```
 

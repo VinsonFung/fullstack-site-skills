@@ -11,6 +11,7 @@ export const REQUIRED_FILES = Object.freeze([
   'docs/PROVENANCE.md', 'scripts/install.mjs', 'scripts/validate.mjs',
   'docs/DEEPSEEK.md', 'docs/PUBLISH.zh-CN.md',
   'docs/WORKBUDDY.md', 'scripts/check-links.mjs',
+  'docs/MIGRATION.md',
 ]);
 
 // Deliberately limited to this package's portable scalar frontmatter. This is

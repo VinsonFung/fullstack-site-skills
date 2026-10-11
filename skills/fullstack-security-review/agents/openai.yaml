@@ -1,4 +1,0 @@
-interface:
-  display_name: "Fullstack Security Review"
-  short_description: "Review web trust boundaries and real attack paths"
-  default_prompt: "Use $fullstack-security-review to complete the requested website task with reviewable evidence."

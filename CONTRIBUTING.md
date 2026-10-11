@@ -9,6 +9,7 @@ Before proposing a change:
 - Preserve users' scope and existing authorization. Do not add universal approval prompts, tool grants, forced frameworks, providers or visual styles.
 - Add tests for meaningful script behavior. For a changed skill, try a realistic request with minimal fixtures and report what the agent did.
 - Keep the three README translations synchronized for capabilities, commands and caveats.
+- When changing a shared development reference or asset, update both standalone copies. The consolidation tests require matching copies; do not introduce cross-skill filesystem dependencies.
 - Use fictitious examples. Never contribute credentials, user records, private paths, database exports or screenshots of private admin data.
 
 Run from the package root:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Development"
+  short_description: "Build and verify usable visitor-facing websites"
+  default_prompt: "Use $fullstack-frontend-development for the requested public website change, preserving its data contract and verifying the visitor journey."

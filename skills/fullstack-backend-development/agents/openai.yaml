@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backend Development"
+  short_description: "Build reliable admin, data and publishing operations"
+  default_prompt: "Use $fullstack-backend-development for the requested management or service change, protecting drafts, media ownership and recovery boundaries."

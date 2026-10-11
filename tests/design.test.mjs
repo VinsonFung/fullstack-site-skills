@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-const stylesheet = await readFile(new URL('../skills/fullstack-liquid-glass-design/assets/glass-tokens.css', import.meta.url), 'utf8');
+const stylesheet = await readFile(new URL('../skills/fullstack-design-style/assets/glass-tokens.css', import.meta.url), 'utf8');
 const css = stylesheet.replace(/\/\*[\s\S]*?\*\//g, '');
 const blocks = [...css.matchAll(/(\[data-fsg-theme(?:="dark")?\])\s*\{([^}]+)\}/g)];
 const tokens = (block) => Object.fromEntries([...block.matchAll(/(--fsg-[\w-]+)\s*:\s*([^;]+);/g)].map((entry) => [entry[1], entry[2].trim()]));

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,readFile,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import path from 'node:path';import os from 'node:os';
-import {scan} from '../skills/fullstack-security-review/scripts/scan-secrets.mjs';
+import {scan} from '../skills/fullstack-backend-development/scripts/scan-secrets.mjs';
 
 async function root(t){const dir=await mkdtemp(path.join(await realpath(os.tmpdir()),'fullstack-scanner-test-'));t.after(async()=>{if(!path.basename(dir).startsWith('fullstack-scanner-test-'))throw new Error('Unsafe fixture cleanup');await rm(dir,{recursive:true,force:true})});return dir}
 test('scanner returns only locations and rules for a candidate value',async t=>{

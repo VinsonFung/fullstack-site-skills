@@ -1,4 +1,0 @@
-interface:
-  display_name: "Fullstack Release"
-  short_description: "Release exact changes and verify the public site"
-  default_prompt: "Use $fullstack-release to complete the requested website task with reviewable evidence."

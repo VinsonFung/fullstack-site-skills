@@ -1,4 +1,0 @@
-interface:
-  display_name: "Fullstack Workflow"
-  short_description: "Scope and deliver full-stack website changes"
-  default_prompt: "Use $fullstack-workflow to complete the requested website task with reviewable evidence."

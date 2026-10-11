@@ -4,7 +4,7 @@
 
 ## 这是什么？
 
-这是一套给 **AI 编程助手使用的全栈网站开发工作指南**，包含九个可独立安装的技能，覆盖规划、视觉设计、交互检查、编辑器、内容同步、发布、AI 功能、安全和维护。安装到你正在使用的 Agent 中，再提出具体任务并说明要用哪个技能。
+Fullstack Site Skills 2.0.0 是一套给 **AI 编程助手使用的全栈网站开发工作指南**，只有三个可独立安装的入口：前台开发、可选的设计风格、后台开发（包含管理界面）。把需要的技能安装到你正在使用的 Agent 中，再提出具体任务并说明要用哪个技能。
 
 可以把 Skill 理解成给 AI 的工作手册：告诉它先检查什么、如何修改、哪些已有内容需要保护，以及用什么证据确认结果有效。每个技能都是独立文件夹，入口是 `SKILL.md`，并附有需要的参考资料或工具。
 
@@ -16,31 +16,31 @@
 
 | 技能 | 帮助 Agent 完成什么 | 使用例子 |
 | --- | --- | --- |
-| [fullstack-workflow](skills/fullstack-workflow/SKILL.md) | 把网站目标变成前台、后台、接口和存储相互配合的计划与实现，并说明如何验收。 | “给博客增加相册，先梳理编辑、存储和公开展示怎样连起来。” |
-| [fullstack-liquid-glass-design](skills/fullstack-liquid-glass-design/SKILL.md) | 建立以摄影和内容阅读为主的视觉风格，用透明玻璃导航、按钮和面板，统一主题、字体与动效。 | “把摄影作品集做成这种液态玻璃风格，文章要易读，手机上也要好用。” |
-| [fullstack-ui-review](skills/fullstack-ui-review/SKILL.md) | 检查现有界面是否读得清、找得到、操作得了，覆盖主题、弹窗、拖动、焦点和被打断的动画；只要求审查时返回问题清单。 | “审查手机菜单和主题切换，先报告能复现的问题，不修改。” |
-| [fullstack-editor-reliability](skills/fullstack-editor-reliability/SKILL.md) | 保护作者在排版、表格、图片操作、模式切换、保存和重新打开过程中的内容，并处理保存冲突。 | “修复图片不能移动、不能删除的问题，确认重新打开后描述和格式仍在。” |
-| [fullstack-content-sync](skills/fullstack-content-sync/SKILL.md) | 明确哪份内容才是权威来源，让相关展示使用同一版本，刷新时保留草稿和共用媒体。 | “文章发布了，但搜索和日历没有更新，追查并修复同步问题。” |
-| [fullstack-release](skills/fullstack-release/SKILL.md) | 把已授权、已检查的修改提交和部署，再确认正式网站显示预期版本。 | “发布这次已授权的修改，并确认正式网站已经更新。” |
-| [fullstack-ai-safety](skills/fullstack-ai-safety/SKILL.md) | 开发基于本站内容的聊天或影像助手，使用已发布资料，在服务端保管密钥，并限制媒体访问、使用量和费用。 | “增加只使用已发布文章的网站助手，保护草稿，并设置费用上限。” |
-| [fullstack-security-review](skills/fullstack-security-review/SKILL.md) | 检查权限、接口、上传和内容渲染中实际可触达的风险，审查发布文件里的密钥与私有数据。 | “上线前审查上传接口和管理员权限。” |
-| [fullstack-maintenance](skills/fullstack-maintenance/SKILL.md) | 清理前追踪文件引用，准备限定范围的撤销和备份恢复，确认哪些资源仍在使用。 | “列出未使用媒体及其引用，准备能够恢复的清理方案。” |
+| [fullstack-frontend-development](skills/fullstack-frontend-development/SKILL.md)（前台开发） | 开发和检查访客使用的页面：阅读、导航、搜索、相册、评论等交互，兼顾手机布局、无障碍、性能和客户端安全。 | “修复手机文章菜单和相册浏览，检查键盘操作、被打断的动画和图片加载缓慢的问题。” |
+| [fullstack-design-style](skills/fullstack-design-style/SKILL.md)（设计风格） | 应用摄影主导、编辑式排版、蓝灰色液态玻璃视觉风格，统一构图、浅色／深色主题、字体、透明控件和克制的动效。 | “按这套风格改版摄影首页，让文章在两种主题下都清晰易读。” |
+| [fullstack-backend-development](skills/fullstack-backend-development/SKILL.md)（后台开发） | 开发管理界面和编辑器，以及接口、数据、身份验证、媒体、内容同步、发布、备份和服务端 AI 安全措施。 | “修复编辑器图片操作和保存冲突，确认已发布内容同步到搜索和相册，草稿不会泄露。” |
 
-### 视觉设计与 UI 审查有什么区别？
+### 三个技能怎样分工？
 
-想按这套具体方向创建或改版网站外观时，用 `fullstack-liquid-glass-design`。它让照片承担主要构图：浅色主题采用暖纸色背景、柔和白色玻璃与克制的蓝色点缀，深色主题采用有层次的藏蓝；标题有辨识度，正文适合长篇阅读。导航、按钮和部分面板使用透明材质、细微高光与适量阴影，阅读和编辑区域保持安静清晰；动效从触发控件的位置展开，并适配手机和“减少动态效果”偏好。
+`fullstack-frontend-development` 负责公开的访客体验，让阅读、搜索、相册和互动在网站现有风格下正常工作。`fullstack-backend-development` 负责作者和管理员的工作流程，包含能看到的管理页面、编辑器，以及背后的接口和数据。这里的“后台开发”包含后台 UI 和编辑可靠性，并不只指服务端代码。功能同时涉及前台与后台时，要一起约定接口和内容版本。
 
-想检查现有界面或修复具体操作时，用 `fullstack-ui-review`。它关注文字能否看清、弹窗是否对齐、键盘与触屏能否操作、动画中途打断是否正常，并尊重网站已经选定的视觉风格，不要求采用玻璃效果。
+只有想按这套具体方向创建或改版外观时，才使用 `fullstack-design-style`。它让照片承担主要构图，以蓝灰色贯穿浅色和深色主题：浅色采用暖纸色背景、柔和白色玻璃，深色采用有层次的藏蓝；标题有辨识度，正文适合长篇阅读。导航、按钮和部分面板使用透明材质、细微高光与适量阴影，阅读和编辑区域保持安静清晰；动效从触发控件的位置展开，并适配手机和“减少动态效果”偏好。
 
-两者可以组合：先用 `fullstack-liquid-glass-design` 建立外观，再用 `fullstack-ui-review` 检查实际使用过程。设计技能是可选且独立的方向，不依赖 Hallmark，也不会把这套外观强加给另外八个技能。安装全部九个技能，不代表每项任务都要调用全部技能。
+设计技能决定视觉表现；前台和后台开发负责对应页面的实际操作、数据保护与权限约束。功能修复或审查会保留现有视觉风格，除非你明确要求改版。设计技能是可选且独立的方向，不依赖 Hallmark；提供的是风格指南，不附带原网站的品牌标识、照片或正文。
 
 ### 只用一个，还是组合使用？
 
-- 问题明确且范围较小时，单独使用对应技能。例如正文图片操作出错，通常先用 `fullstack-editor-reliability`。
-- 功能跨越多个层面时，先用 `fullstack-workflow`，再加上相关技能。例如新增相册可能需要视觉设计、内容同步和 UI 审查。
-- 发布或维护时，只在你已授权的操作范围内调用相关技能。设计或审查任务本身不会自动授权部署或删除。
+- 范围明确时单独使用：公开搜索或手机导航用前台开发，视觉改版用设计风格，编辑器、上传接口或备份流程用后台开发。
+- 新增相册等跨层功能可组合前台与后台：后台管理编辑、媒体和发布，前台向访客展示已发布内容。需要这套视觉方向时，再加入设计风格。
+- 发布、安全检查或维护时，只在你已授权的操作范围内使用对应指导。设计或审查任务本身不会自动授权部署或删除；只要求审查时返回问题清单。
 
-每个技能自带所需参考资料，不强制安装其他技能。这套指南提供可重复使用的工作方法，不保证 AI 生成的代码一定正确。Agent 仍需要合适的工具、项目访问权限和你的授权；重要修改仍然需要人工复核。
+每个技能都能独立安装，自带所需参考资料，不强制安装另外两个。安全、内容同步、发布、维护等专业指导保留在内部参考资料中，遇到相关任务时按需读取；它们不是额外的可见技能，也不要求每项任务通读全部资料。安装全部三个技能，不代表每项任务都要调用全部技能。
+
+这套指南提供可重复使用的工作方法，不保证 AI 生成的代码一定正确。Agent 仍需要合适的工具、项目访问权限和你的授权；重要修改仍然需要人工复核。
+
+### 从第 1 版升级
+
+2.0.0 将原来的九个入口合并为这三个。[迁移指南](docs/MIGRATION.md)说明了职责对应关系和新的调用方式。安装器不会自动删除 Agent 中已安装的旧技能文件夹；请先检查自己的修改，再有选择地停用或移除旧入口，避免新旧指导重复出现。
 
 ## 三步安装与使用
 
@@ -69,7 +69,7 @@ node scripts/install.mjs --agent workbuddy --scope user --apply
 第一条只显示准备复制到哪里，带 `--apply` 的命令才会复制文件。只安装一个技能，或同时安装到多个 Agent：
 
 ```sh
-node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,workbuddy --scope user --skill fullstack-workflow --apply
+node scripts/install.mjs --agent deepseek-harness,kimi-code,qwen-code,workbuddy --scope user --skill fullstack-frontend-development --apply
 ```
 
 如果只想让当前项目使用，在目标项目的终端执行以下命令，并把脚本路径换成实际位置。目标项目文件夹必须已经存在：
@@ -83,19 +83,19 @@ Windows 中，脚本路径含空格时要加引号。安装器会拒绝包含 `.
 
 ### 第三步：确认识别，然后提出任务
 
-必要时重新加载 Agent 或新建会话。确认它能识别 `fullstack-workflow`，然后描述具体任务，例如：
+必要时重新加载 Agent 或新建会话。确认它能识别你安装的技能，然后描述具体任务，例如：
 
 ```text
-使用 fullstack-workflow 规划我的博客下一版。
-本轮只改本地文件，不部署。
+使用 fullstack-frontend-development 修复博客的手机菜单和文章搜索。
+检查键盘与触屏操作。本轮只改本地文件，不部署。
 
-使用 fullstack-liquid-glass-design 改版我的摄影首页。
-再用 fullstack-ui-review 检查手机布局、对比度和键盘操作。
+使用 fullstack-design-style 改版我的摄影首页。
+再用 fullstack-frontend-development 检查手机布局、对比度和键盘操作。
 
-使用 fullstack-editor-reliability 修复正文图片不能移动、不能删除的问题。
+使用 fullstack-backend-development 修复编辑器图片不能移动、不能删除的问题。
 检查保存后重新打开、图片描述和其他格式仍然正常。
 
-使用 fullstack-release 发布我已经授权的修改。
+使用 fullstack-backend-development 发布我已经授权的修改。
 核验正式网站后，再确认发布完成。
 ```
 

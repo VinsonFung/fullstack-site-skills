@@ -5,10 +5,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const SKILL_NAMES = Object.freeze([
-  'fullstack-workflow', 'fullstack-ui-review', 'fullstack-liquid-glass-design', 'fullstack-editor-reliability',
-  'fullstack-content-sync', 'fullstack-release', 'fullstack-ai-safety',
-  'fullstack-security-review', 'fullstack-maintenance',
+  'fullstack-frontend-development', 'fullstack-design-style', 'fullstack-backend-development',
 ]);
+
+const retiredSkills = new Set([
+  'fullstack-workflow', 'fullstack-ui-review', 'fullstack-liquid-glass-design',
+  'fullstack-editor-reliability', 'fullstack-content-sync', 'fullstack-release',
+  'fullstack-ai-safety', 'fullstack-security-review', 'fullstack-maintenance',
+]);
+function rejectRetiredSkill(name) {
+  if (retiredSkills.has(name)) throw new Error('This skill name was retired in v2.0.0. Choose one of the three current entries with --list; see docs/MIGRATION.md. Existing installations are not deleted.');
+}
 
 // These are native installation paths, not a claim that all agents share a path.
 export const AGENT_PATHS = Object.freeze({
@@ -67,7 +74,10 @@ export function parseArgs(args) {
     if (agent === 'deepseek') throw new Error('Choose deepseek-harness for the native Agent, or opencode/codex for a DeepSeek-backed host. See docs/DEEPSEEK.md.');
     if (!Object.hasOwn(AGENT_PATHS, agent)) throw new Error(`Unsupported agent: ${agent}`);
   }
-  for (const skill of options.skills) if (!SKILL_NAMES.includes(skill)) throw new Error('Unknown skill name; use --list.');
+  for (const skill of options.skills) {
+    rejectRetiredSkill(skill);
+    if (!SKILL_NAMES.includes(skill)) throw new Error('Unknown skill name; use --list.');
+  }
   if (!['project', 'user'].includes(options.scope)) throw new Error('--scope must be project or user.');
   if (options.project) assertNoTraversal(options.project, 'project path');
   if (!options.help && !options.list) {
@@ -134,6 +144,7 @@ export function resolveTargets({ agents, scope, project, homeDir = os.homedir(),
   return canonicalAgents(agents).flatMap((agent) => {
     if (!Object.hasOwn(AGENT_PATHS, agent)) throw new Error(`Unsupported agent: ${agent}`);
     return [...new Set(skills)].map((skill) => {
+      rejectRetiredSkill(skill);
       if (!SKILL_NAMES.includes(skill)) throw new Error('Invalid skill name.');
       return { agent, skill, destination: path.resolve(base, AGENT_PATHS[agent][scope], skill) };
     });
@@ -204,6 +215,7 @@ Agents: ${Object.keys(AGENT_PATHS).join(', ')}
 Names may be comma-separated. Without --apply, this only previews copies.
 Existing identical skills are skipped. Conflicts and symlinks are refused.
 Native default paths only: custom client roots require a manual copy.
+Version 2 has three skill entries; upgrading never deletes old installed folders. See docs/MIGRATION.md.
 DeepSeek: use deepseek-harness; the web chat/API has no local skills folder.
 WorkBuddy: codebuddy is a compatible alias; both use the documented .codebuddy paths.
 kimi-code is current; kimi-cli is the legacy Python client. trae-cn is the mainland IDE; trae-cli is the CLI.`;
