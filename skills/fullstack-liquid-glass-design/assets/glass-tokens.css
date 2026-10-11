@@ -1,0 +1,77 @@
+/* Optional photographic-glass palette. Adapt roles into the receiving theme.
+   No global styling, asset imports or automatic theme selection. */
+[data-fsg-theme] {
+  color-scheme: light;
+  --fsg-page: #f4f3ef;
+  --fsg-surface: #fbfaf7;
+  --fsg-field: #ffffff;
+  --fsg-glass-wash: rgba(236, 246, 252, 0.76);
+  --fsg-glass-fallback: #edf5fa;
+  --fsg-ink: #172331;
+  --fsg-muted: #60707c;
+  --fsg-accent: #376c8d;
+  --fsg-accent-ink: #ffffff;
+  --fsg-focus: #287eae;
+  --fsg-border: rgba(69, 111, 143, 0.24);
+  --fsg-reflection: rgba(255, 255, 255, 0.72);
+  --fsg-sheen: rgba(255, 255, 255, 0.34);
+  --fsg-error: #9f3438;
+  --fsg-success: #246846;
+  --fsg-shadow-surface: 0 5px 18px rgba(29, 60, 84, 0.075);
+  --fsg-shadow-control: 0 2px 7px rgba(29, 60, 84, 0.08);
+  --fsg-shadow-overlay: 0 12px 34px rgba(12, 35, 53, 0.16);
+  --fsg-font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --fsg-font-body: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  --fsg-font-reading: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --fsg-space-xs: 0.5rem;
+  --fsg-space-sm: 0.75rem;
+  --fsg-space-md: 1rem;
+  --fsg-space-lg: 1.5rem;
+  --fsg-space-xl: 2.5rem;
+  --fsg-space-section: clamp(2.5rem, 6vw, 4rem);
+  --fsg-text-meta: 0.875rem;
+  --fsg-text-ui: 1rem;
+  --fsg-text-body: 1.0625rem;
+  --fsg-text-heading: clamp(1.5rem, 3vw, 2rem);
+  --fsg-text-display: clamp(2.4rem, 5vw, 4.5rem);
+  --fsg-leading-body: 1.82;
+  --fsg-radius-control: 0.75rem;
+  --fsg-radius-panel: 1rem;
+  --fsg-radius-pill: 999px;
+  --fsg-touch-target: 2.75rem;
+  --fsg-blur-control: 14px;
+  --fsg-blur-panel: 24px;
+  --fsg-duration-feedback: 160ms;
+  --fsg-duration-panel: 320ms;
+  --fsg-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --fsg-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+[data-fsg-theme="dark"] {
+  color-scheme: dark;
+  --fsg-page: #071521;
+  --fsg-surface: #0b1c2a;
+  --fsg-field: #112838;
+  --fsg-glass-wash: rgba(13, 39, 58, 0.86);
+  --fsg-glass-fallback: #122d40;
+  --fsg-ink: #e9f2f7;
+  --fsg-muted: #a1b7c5;
+  --fsg-accent: #7bc8f1;
+  --fsg-accent-ink: #071521;
+  --fsg-focus: #91d7ff;
+  --fsg-border: rgba(134, 193, 223, 0.26);
+  --fsg-reflection: rgba(210, 239, 253, 0.16);
+  --fsg-sheen: rgba(136, 202, 238, 0.1);
+  --fsg-error: #ffbcc2;
+  --fsg-success: #9edcc0;
+  --fsg-shadow-surface: 0 5px 18px rgba(0, 5, 12, 0.18);
+  --fsg-shadow-control: 0 2px 7px rgba(0, 5, 12, 0.2);
+  --fsg-shadow-overlay: 0 12px 34px rgba(0, 5, 12, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-fsg-theme] {
+    --fsg-duration-feedback: 0ms;
+    --fsg-duration-panel: 100ms;
+  }
+}

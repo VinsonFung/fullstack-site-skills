@@ -1,0 +1,4 @@
+interface:
+  display_name: "Photographic Liquid Glass Design"
+  short_description: "Design photo-led glass sites with readable themes"
+  default_prompt: "Use $fullstack-liquid-glass-design to apply a photograph-led editorial glass style while preserving my project's content and working interactions."

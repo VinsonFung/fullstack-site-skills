@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const SKILL_NAMES = Object.freeze([
-  'fullstack-workflow', 'fullstack-ui-review', 'fullstack-editor-reliability',
+  'fullstack-workflow', 'fullstack-ui-review', 'fullstack-liquid-glass-design', 'fullstack-editor-reliability',
   'fullstack-content-sync', 'fullstack-release', 'fullstack-ai-safety',
   'fullstack-security-review', 'fullstack-maintenance',
 ]);

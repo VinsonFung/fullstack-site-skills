@@ -25,4 +25,10 @@ Client-specific documentation and paths are recorded in [COMPATIBILITY.md](COMPA
 
 Portable lessons include immutable content generations, expected-version checks, unknown-outcome recovery, reference-protected media, scoped undo and bounded AI accounting. Glass materials, animated carousels, navigation names, fixed quotas, image formats, providers and frontend/backend directory choices remain decisions for the consuming project.
 
+## Optional design direction
+
+The ninth skill, [fullstack-liquid-glass-design](../skills/fullstack-liquid-glass-design/SKILL.md), distills the author's user-owned public frontend style into original instructions: scenic photography, editorial typography, blue-grey glass, readable painted surfaces and coherent light/dark themes. The included namespaced CSS palette was written as a small adjustable example, not exported from the site's accumulated stylesheets.
+
+No photography, logos, avatars, article text, motto, site addresses, source-site routes or proprietary font files are distributed. Hallmark informed the extraction method during preparation; its skill text, catalogs, implementation code and assets are not bundled, and the new skill does not require Hallmark. This optional style is used when requested or already established, not imposed by the other eight development skills.
+
 The skills preserve the user's actual authority and chosen architecture. They are practical guidance with stated validation limits, not a certification, framework distribution or guarantee of defect-free implementation.
